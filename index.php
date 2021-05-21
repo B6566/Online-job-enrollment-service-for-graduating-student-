@@ -1,13 +1,22 @@
-<?php
-	session_start();
-	if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] == false) {
-		header("Location: loginpage.php");
-		
-	}
-?>
+<DOCTYPE html>
+<html>
+<head>
+    <title>LOGIN</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <form action="login.php" method="post"> 
+    <h2>LOGIN</h2 >
+    <?php if (isset($_GET['error']))  { ?>
+         <p class="error"><?php echo $_GET['error']; ?></p>
+     <?php } ?>
+    <label>User Name</label>
+    <input type="text" name="uname" placeholder="User Name"><br>
 
-<h2>You have logged in</h2>
-
-<form method ="post" action="logout.php">
-	<input type="submit" value="Logout">
+    <label>User Name</label>
+    <input type="password" name="password" Placeholder="password"><br> 
+    <button type="submit">Login</button>
 </form>
+</body>
+</html> 
+     
